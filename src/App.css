@@ -1,42 +1,56 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.main{
+  background-color: #E8F5E9 ;
+  padding: 10px;
+}
+.config{
+  background-color: #1B5E20;
+  padding: 5px;
+  color: white;
+  font-size: 25px;
+  display: grid;
+}
+.text-display-1{
+  font-size: 18px;
+  color: #5D9B5D;
+  font-weight: bold;
   text-align: center;
+  margin: 5px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.select-color {
+  background-color: transparent;
+  text-align: center;
+  border: 0;
+  margin-left: 5px;
+  margin-right: 5px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+input[type="radio"] {
+  margin: 10px;
+  
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.checkbox-display{
+  align-items: left;
+  align-content: left;
+  align-self: left;
+  text-align: left;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.felgs-display{
+  background-color: #9AEB9A;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.felgs-display-left{
+  float: left;
+  width: 50%;
+  text-align: center;
+  background-color: #9AEB9A;
+  padding: 10px;
 }
-
-.card {
-  padding: 2em;
+.felgs-display-right{
+  float: right;
+  width: 50%;
+  text-align: center;
+  background-color: #9AEB9A;
+  padding: 10px;
 }
-
-.read-the-docs {
-  color: #888;
+.overall-display{
+  text-align: right;
 }
