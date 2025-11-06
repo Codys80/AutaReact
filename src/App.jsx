@@ -32,7 +32,8 @@ function App() {
       break;
     case 'felgi':
        setSamochod({...samochod,
-            cenaFelgi: myRef.target.value === 'aluminiowe' ? 3000 : 0,})
+            cenaFelgi: myRef.target.value === 'aluminiowe' ? 3000 : 0,
+            felgi: myRef.target.value,})
           break;
     case 'CzujnikParkowania':
       setSamochod({...samochod,
@@ -51,7 +52,7 @@ function App() {
       break;
 
     }
-        
+    console.log(samochod);    
   }
 
   return (
@@ -80,11 +81,11 @@ function App() {
         </div>
         <div className='felgs-display col-lg '>
             <div className='felgs-display-left'>
-              <input className='form-check-input' type="radio" id="stalowe"name="felgi" value="stalowe"/>
+              <input className='form-check-input' type="radio" id="stalowe"name="felgi" value="stalowe" ref={myRef} onChange={handleChange} defaultChecked/>
               <label className="form-check-label" htmlFor="stalowe">Stalowe</label>
             </div>
             <div className='felgs-display-right'>
-              <input className='form-check-input' type="radio" id="aluminiowe" name="felgi" value="aluminiowe"/>
+              <input className='form-check-input' type="radio" id="aluminiowe" name="felgi" value="aluminiowe" ref={myRef} onChange={handleChange}/>
               <label className="form-check-label" htmlFor="aluminiowe">Aluminiowe</label>
             </div>
         
@@ -94,9 +95,9 @@ function App() {
         </div>
         <div className = 'row'>
           <div className='checkbox-display col'>
-            <input type="checkbox" id="CzujnikParkowania" name="CzujnikParkowania" value="CzujnikParkowania"/> <label htmlFor="CzujnikParkowania">Czujnik Parkowania</label><br/>
-            <input type="checkbox" id="Climatronic" name="Climatronic" value="Climatronic"/> <label htmlFor="Climatronic">Climatronic</label><br/>
-            <input type="checkbox" id="Nawigacja" name="Nawigacja" value="Nawigacja"/> <label htmlFor="Nawigacja">Nawigacja</label><br/>
+            <input type="checkbox" id="CzujnikParkowania" name="CzujnikParkowania" value="CzujnikParkowania" ref={myRef} onChange={handleChange}/> <label htmlFor="CzujnikParkowania">Czujnik Parkowania</label><br/>
+            <input type="checkbox" id="Climatronic" name="Climatronic" value="Climatronic" ref={myRef} onChange={handleChange}/> <label htmlFor="Climatronic">Climatronic</label><br/>
+            <input type="checkbox" id="Nawigacja" name="Nawigacja" value="Nawigacja" ref={myRef} onChange={handleChange}/> <label htmlFor="Nawigacja">Nawigacja</label><br/>
           </div>
           <div className='col'></div>
         </div>
@@ -105,15 +106,13 @@ function App() {
           <h2 className='text-display-1'>Wycena</h2>
         </div>
         <div className='overall-display col-lg'>
-          <p>Cena: 100000 PLN</p>
-          <p>{samochod.cenaBazowa}</p>
-          <p>{samochod.kolor}</p>
-          <p>{samochod.felgi}</p>
-          <p>{samochod.dodatkowe[0] ? 'Czujnik Parkowania' : ''}</p>
-          <p>{samochod.dodatkowe[1] ? 'Climatronic' : ''}</p>
-          <p>{samochod.dodatkowe[2] ? 'Nawigacja' : ''}</p>
-          <p>{samochod.cenaCzujnikParkowania + samochod.cenaClimatronic + samochod.cenaNawigacja}</p>
-          <p>{samochod.cenaBazowa + samochod.cenaCzujnikParkowania + samochod.cenaClimatronic + samochod.cenaNawigacja}</p>
+          <p>{`Cena bazowa: ${samochod.cenaBazowa}`}</p>
+          <p>{samochod.kolor==='szary' ? '' : `Lakier: ${samochod.cenaLakier}`}</p>
+          <p>{samochod.felgi==='aluminiowe' ? `Felgi: ${samochod.cenaFelgi}`: ''}</p>
+          <p>{samochod.dodatkowe[0] ? `Czujnik Parkowania: ${samochod.cenaCzujnikParkowania}` : ''}</p>
+          <p>{samochod.dodatkowe[1] ? `Climatronic: ${samochod.cenaClimatronic}` : ''}</p>
+          <p>{samochod.dodatkowe[2] ? `Nawigacja: ${samochod.cenaNawigacja}` : ''}</p>
+          <p>{`Razem: ${samochod.cenaBazowa + samochod.cenaCzujnikParkowania + samochod.cenaClimatronic + samochod.cenaNawigacja}`}</p>
           
         </div>
       </div>
