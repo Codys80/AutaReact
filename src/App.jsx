@@ -112,7 +112,7 @@ function App() {
           <p>{samochod.dodatkowe[0] ? `Czujnik Parkowania: ${samochod.cenaCzujnikParkowania}` : ''}</p>
           <p>{samochod.dodatkowe[1] ? `Climatronic: ${samochod.cenaClimatronic}` : ''}</p>
           <p>{samochod.dodatkowe[2] ? `Nawigacja: ${samochod.cenaNawigacja}` : ''}</p>
-          <p>{`Razem: ${samochod.cenaBazowa + samochod.cenaCzujnikParkowania + samochod.cenaClimatronic + samochod.cenaNawigacja}`}</p>
+          <p>{`Razem: ${samochod.cenaBazowa + samochod.cenaCzujnikParkowania + samochod.cenaClimatronic + samochod.cenaNawigacja + samochod.cenaLakier + samochod.cenaFelgi}`}</p>
           
         </div>
       </div>
